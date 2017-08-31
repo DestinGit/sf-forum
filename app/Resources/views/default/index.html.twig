@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="2"><h2>Themes super</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for theme in themes %}
+                <tr>
+                    <td><a href="{{ path('app_default_theme', {'id': theme['id']}) }}">{{ theme['title'] }}</a></td>
+                    <td>{{ theme['nbPost'] }} posts</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Bienvenue! Forum du yemei{% endblock %}</title>
+        {% block stylesheets %}
+            <link href="{{ asset('bower_assets/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href="{{ asset('bower_assets/bootstrap/dist/css/bootstrap-theme.min.css') }}" rel="stylesheet">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="container-fluid">
+    <header>
+        {% block header %}ICI MON SUPER SITE{% endblock %}
+    </header>
+    <nav>
+        {% block nav %}{% endblock %}
+    </nav>
+    <main class="row">
+        <div class="col-md-6 col-md-offset-2">
+            {% block body %}{% endblock %}
+        </div>
+        <aside class="col-md-3 col-md-offset-1">
+            {% block aside %}ICI LA PUB{% endblock %}
+        </aside>
+    </main>
+    <footer>
+        {% block footer %}ICI MON FOOTER{% endblock %}
+    </footer>
+        {% block javascripts %}
+            <script src="{{ asset('bower_assets/jquery/dist/jquery.min.js') }}"></script>
+            <script src="{{ asset('bower_assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
