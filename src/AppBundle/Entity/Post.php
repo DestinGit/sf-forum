@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +43,17 @@ class Post
      */
     private $dateCreate;
 
+    /**
+     * @var Theme
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Theme", inversedBy="posts", cascade={"persist"})
+     */
+    private $theme;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="post")
+     */
+    private $comment;
 
     /**
      * Get id

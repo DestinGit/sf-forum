@@ -35,6 +35,11 @@ class Comment
      */
     private $dateCreate;
 
+    /**
+     * @var Post
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Post", inversedBy="comment", cascade={"persist"})
+     */
+    private $post;
 
     /**
      * Get id

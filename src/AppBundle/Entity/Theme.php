@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,11 +30,10 @@ class Theme
     private $title;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="nbPost", type="smallint", nullable=true)
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Post", mappedBy="theme")
      */
-    private $nbPost;
+    private $posts;
 
 
     /**
